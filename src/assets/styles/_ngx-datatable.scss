@@ -1,0 +1,101 @@
+.ngx-datatable.material.scrollBarH .datatable-body {
+    max-height: 700px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+.ngx-datatable.material.scrollBarV .datatable-body {
+    max-height: 700px !important;
+    overflow-y: auto !important;
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+    padding: 10px 10px 10px 15px !important;
+}
+
+.ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell {
+    padding: 10px 10px 10px 15px !important;
+    font-weight: bold !important;
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row.datatable-row-even {
+    background-color: rgba(0, 0, 0, .05) !important;
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row {
+    vertical-align: top !important;
+    border-top: 1px solid #d1d4d7 !important;
+}
+
+.ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
+    background-color: transparent !important;
+}
+
+.ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell {
+    background-color: #2f353a;
+    color: white;
+}
+
+.datatable-row-odd {
+    .datatable-body-cell {
+        background: white !important;
+    }
+}
+
+.dropdown-item i {
+    color: black;
+}
+
+.show>.btn-info.dropdown-toggle {
+    color: #fff !important;
+    background-color: #1c7336 !important;
+    border-color: #1c7336 !important;
+    min-width: 40px !important;
+}
+
+.show>.btn-info.dropdown-toggle:focus {
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #1c7336 !important;
+}
+
+.dropdown {
+    .btn-info:focus {
+        box-shadow: 0.5px 0.5px 0.5px 0.5px #1c7336 !important;
+    }
+
+    .dropdown-item:active {
+        background-color: transparent !important;
+    }
+}
+
+.btn-align {
+    width: 100px;
+    height: 34px !important;
+}
+
+.btn-info:not(:disabled):not(.disabled):active {
+    background-color: #1c7336 !important;
+}
+
+.btn-info:focus {
+    background-color: #1c7336 !important;
+}
+
+.datatable-body-cell-label {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.datatable-body::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    background-color: #dce9f5;
+    border-radius: 5px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.datatable-body::-webkit-scrollbar-thumb {
+    background-color: #73818f;
+    border-radius: 5px;
+}

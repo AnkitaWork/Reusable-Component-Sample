@@ -1,0 +1,26 @@
+<h4>Basic Crud Operation Example</h4>
+<hr>
+<div class="row pb-3">
+    <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+        <input type="text" placeholder="Search by email" class="form-control" name="search" [(ngModel)]="searchText">
+    </div>
+    <div class="col-6 col-sm-6 col-md-6 col-lg-9 col-xl-9 text-right">
+        <button type="button" class="btn btn-primary" (click)="openModal('add')">Add</button>
+    </div>
+</div>
+<ng-container *ngIf="gridRefreshFlag">
+    <app-data-table-grid [rows]="listData" [searchText]="searchText" [searchField]="searchField" [columns]="columns" [reorderable]="true" [loadingIndicator]="loadingIndicator"
+        [limit]="10" (actionEvent)="actionReceived($event)" [scrollbarH]="false">
+    </app-data-table-grid>
+</ng-container>
+<ng-template #dialogOpen let-modal>
+    <div class="modal-header bg-white">
+        <h5 class="modal-title" id="editVideoLabel">{{screenMode === 'add' ? 'Add Data': 'Update Data'}}</h5>
+        <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body bg-white">
+        <app-dynamic-forms [fields]="fields" [sendFormData]="sendFormData" [buttonText]="screenMode === 'add' ? 'Add': 'Update'" (sendFormDataToParent)="save($event)"></app-dynamic-forms>
+    </div>
+</ng-template>

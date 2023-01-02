@@ -1,0 +1,20 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+        <a ngbNavLink>NGX-Datatable</a>
+        <ng-template ngbNavContent>
+            <p><b>Note: </b>Ngx-data grid is reusable grid component</p>
+            <app-data-table-grid [rows]="listData" [columns]="columns" [reorderable]="true"
+                [loadingIndicator]="loadingIndicator" [limit]="10" [scrollbarH]="true">
+            </app-data-table-grid>
+        </ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink>Ag-Grid Datatable</a>
+        <ng-template ngbNavContent>
+            <p><b>Note: </b>Ag-grid is reusable grid component. Please don't used two data table grid library in live project</p>
+            <app-ag-grid-datatable [rowData]="listData" [columnDefs]="columnDefs" [defaultColDef]="gridSettings"
+            [pagination]="true" [paginationPageSize]="10"></app-ag-grid-datatable>
+        </ng-template>
+    </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>

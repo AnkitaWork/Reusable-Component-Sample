@@ -1,0 +1,4 @@
+<ag-grid-angular #agGrid class="ag-theme-alpine ag-grid-custom" [rowData]="rowData" [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef" (rowClicked)='onRowClicked($event)' [pagination]="pagination" [paginationPageSize]="paginationPageSize" 
+    (cellClicked)='onCellClicked($event)' (selectionChanged)='onSelectionChanged($event)' (gridReady)="onGridReady($event)">
+</ag-grid-angular>

@@ -1,0 +1,18 @@
+<ngx-datatable class="material" [rows]="rows | dataFilter: searchText:searchField" [loadingIndicator]="loadingIndicator" [columnMode]="'force'"
+  [headerHeight]="50" [footerHeight]="50" [limit]="limit" rowHeight="auto" [scrollbarH]="scrollbarH" [reorderable]="reorderable">
+  <ng-container *ngFor="let column of columns; let i = index;">
+    <ngx-datatable-column [name]="column?.name" [prop]="column?.prop"
+      [sortable]="column?.sortable === false ? false : true" [width]="column?.width">
+      <ng-template let-column="column" ngx-datatable-header-template>
+        {{column?.name}}
+      </ng-template>
+      <ng-template let-row="row" let-rowIndex="rowIndex" let-value="value" ngx-datatable-cell-template>
+        <span *ngIf="value">{{value}}</span>
+        <span *ngIf="!value">
+          <i class="fa fa-edit fa-lg mr-2 cursor-pointer" title="edit" (click)="actionType(row,'edit')"></i>
+          <i class="fa fa-trash fa-lg cursor-pointer" title="delete" (click)="actionType(row,'remove')"></i>
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+  </ng-container>
+</ngx-datatable>

@@ -1,0 +1,24 @@
+<!--Loading bar code start-->
+<ngx-spinner bdColor="rgba(172,172,172,0.8)" size="medium" color="#000000" type="ball-clip-rotate-pulse" [fullScreen]="true">
+  <div class="text-dark font-weight-bold">Please Wait...</div>
+</ngx-spinner>
+<!--Loading bar code end-->
+<!--User login then display this block-->
+<div class="container-scroller" *ngIf="isLogin">
+  <app-navbar></app-navbar>
+  <div class="container-fluid page-body-wrapper">
+    <app-sidebar></app-sidebar>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
+<!--User login then display this block end-->
+<!--User not login then display login component block-->
+<ng-container *ngIf="!isLogin">
+  <app-login></app-login>
+</ng-container>
+<!--User not login then display login component block end-->
